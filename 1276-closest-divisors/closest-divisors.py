@@ -1,18 +1,18 @@
 class Solution:
     def closestDivisors(self, num: int) -> List[int]:
         def finddivisors(x):
-            temp=[]
-            find_till=int(math.sqrt(x))
-            for j in range(find_till+1,0,-1):
+            divisors=[]
+            int(math.sqrt(x))
+            for j in range(int(math.sqrt(x)),0,-1):
                 if x%j==0:
-                    temp.append(j)
-                    temp.append(x//j)
-                    return temp
-        list1=finddivisors(num+1)
-        list2=finddivisors(num+2)
-        if abs(list1[0]-list1[1])<abs(list2[0]-list2[1]):
-            return list1
+                    divisors.append(j)
+                    divisors.append(x//j)
+                    return divisors
+        res1=finddivisors(num+1)
+        res2=finddivisors(num+2)
+        if abs(res1[0]-res1[1])<abs(res2[0]-res2[1]):
+            return res1
         else:
-            return list2
+            return res2
         
                     
