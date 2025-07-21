@@ -1,5 +1,5 @@
 #method 2 using stack
-class Solution:
+'''class Solution:
     def makeFancyString(self, s: str) -> str:
         stack=[]
         for char in s:
@@ -11,17 +11,10 @@ class Solution:
                 stack.append([char,1])
             #print(stack)
         res="".join(char*count for char,count in stack)
-        return res           
-
-
-
-
-
-
-
+        return res '''        
 
 #first method
-'''class Solution:
+class Solution:
     def makeFancyString(self, s: str) -> str:
         output=""
         for char in s:
@@ -29,4 +22,4 @@ class Solution:
                 continue
             else:
                 output+=char
-        return output'''
+        return output
