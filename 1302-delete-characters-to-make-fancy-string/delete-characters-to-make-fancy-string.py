@@ -1,3 +1,19 @@
+class Solution:
+    def makeFancyString(self, s: str) -> str:
+        res = []  # Faster than string concatenation
+        count = 1  # Start with 1 since first char is always kept
+
+        for i in range(1, len(s)):
+            if s[i] == s[i - 1]:
+                count += 1
+            else:
+                count = 1  # Reset count for a new character
+
+            if count < 3:
+                res.append(s[i])
+        
+        return s[0] + ''.join(res)  # Add first char + rest
+
 #method 2 using stack
 '''class Solution:
     def makeFancyString(self, s: str) -> str:
@@ -14,7 +30,7 @@
         return res '''        
 
 #first method
-class Solution:
+'''class Solution:
     def makeFancyString(self, s: str) -> str:
         output=""
         for char in s:
@@ -22,4 +38,4 @@ class Solution:
                 continue
             else:
                 output+=char
-        return output
+        return output'''
