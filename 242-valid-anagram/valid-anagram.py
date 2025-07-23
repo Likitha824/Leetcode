@@ -2,6 +2,8 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         hash1={}
         hash2={}
+        if len(t)!=len(s):
+            return False
         for char in s:
             if char not in hash1:
                 hash1[char]=1
